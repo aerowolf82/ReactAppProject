@@ -73,12 +73,12 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ToDo List:
 
--[] An API Call in a a Classical component at the top level
--[] Use fetch to make your API call
--[] Use componentDidMount and setState properly in conjunction
--[] At least 1 classical component (best practice - at the top level)
--[] At least 3 functional components
--[] Some CSS styles for components
+-[/] An API Call in a a Classical component at the top level
+-[/] Use fetch to make your API call
+-[/] Use componentDidMount and setState properly in conjunction
+-[/] At least 1 classical component (best practice - at the top level)
+-[/] At least 3 functional components
+-[/] Some CSS styles for components
 -[] At least 2 event handlers
 -[] At least one form/field (somewhere a user types things or enters data)
     [] This data must be used somehow - to set state, to make an API call, etc.
