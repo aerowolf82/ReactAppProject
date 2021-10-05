@@ -12,7 +12,6 @@ export default function CharacterRick( {charSelectorFunc, selectedChar,list, id}
             <div className="card">
                 <img src='https://rickandmortyapi.com/api/character/avatar/1.jpeg' alt="Rick"/>
                 <div className="card-body">
-                {console.log(list[0].location.name)}
                     <p className="card-text">{list[0].name}</p>
                     <p className="card-text">{list[0].location.name}</p>
                     <p className="card-text">{list[0].status}</p>
