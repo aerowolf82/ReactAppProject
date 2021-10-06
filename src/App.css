@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.background{
+  height:715px;
+}
+
 .container{
   display: flex;
   flex-direction: row;
@@ -20,6 +24,16 @@
   align-items: center;
   justify-content: auto;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: rgb(60, 219, 60);
 }
 
+.navbar-brand{
+  font-weight: 750;
+  color: rgb(60, 219, 60)
+}
+
+.footer{
+  background-color: blueviolet;
+  text-align: right;
+  color: aliceblue;
+}
