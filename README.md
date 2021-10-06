@@ -79,9 +79,9 @@ ToDo List:
 -[/] At least 1 classical component (best practice - at the top level)
 -[/] At least 3 functional components
 -[/] Some CSS styles for components
--[] At least 2 event handlers
+-[] At least 2 event handlers (we have 1 onClick)
 -[] At least one form/field (somewhere a user types things or enters data)
     [] This data must be used somehow - to set state, to make an API call, etc.
 -[]Components that nest to a depth of at least three components:
     [] Example: App > List > ListItem
--[] Passing a method that can affect the state of the top level component as props down to the lowest level component (e.g. in the example above, the ListItem would need to be able to use a method to change the state of App)
+-[/] Passing a method that can affect the state of the top level component as props down to the lowest level component (e.g. in the example above, the ListItem would need to be able to use a method to change the state of App)

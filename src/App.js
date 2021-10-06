@@ -11,6 +11,7 @@ class App extends React.Component {
     super();
     this.state = {
       characterData: [],
+      fullData: [],
       selectedCharacter:0,
       gotData: false,
     };
@@ -55,7 +56,7 @@ class App extends React.Component {
             </div>
             <div className="col-4">
               <div className="p-3 border bg-light">
-                <CharacterRandom />
+                <CharacterRandom selectedChar={selectedCharacter} charSelectorFunc={selectCharacter} list={characterData}/>
               </div>
             </div>
             <div className="col-4">
@@ -83,3 +84,30 @@ class App extends React.Component {
 
 
 export default App;
+
+
+/*
+import {useState} from 'react'
+
+
+search bar implementation within app.js
+const [state, setState] = useState({
+  result=[]
+})
+//^^this stores our api within an array for the search bar. May need to move the api call 
+//to a seperate tab and call it the API file. might make it easier to make our calls in other components
+
+const onSearch = async (text) => {
+  const result = await APISrc.get("/", {
+    params: {s: text, i:"put the api bulk here", apiKey:"if we have it"}
+  })
+  setState(prevState => {
+    return {...revState, result:result }
+  })
+}
+
+
+add to the return of app.js
+<SearchBar onSearch={onSearch}/>
+<CardList results={state.result}/>
+*/

@@ -10,9 +10,13 @@ import './Random.css';
 
 const randomId = () =>{
     let max = 20;
-    const rand = Math.floor(Math.random() * max);
+    const rand = 1+(Math.floor(Math.random() * max));
     return rand;
 }
+
+// const handleClick(){
+//     return CharacterRandom(selecte)
+// }
 
 //no matter what we killed it lol 
 //Yes, yes we did.
@@ -21,53 +25,23 @@ export default function CharacterRandom({charSelectorFunc, selectedChar,list, id
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-    let results = [];
+    selectedChar = randomId();
+    console.log(selectedChar)
+
     
-// const { isLoading, error, data } = useFetch(`https://rickandmortyapi.com/api/character/${randomId()}`);
-
-//if (isLoading) return "Loading...";
-//if (error) return "Error!";
-
-
-    useEffect(() => {
-        fetch(`https://rickandmortyapi.com/api/character/${randomId()}`)
-            .then((response) => {
-                if (response.ok) {
-                    return response.json();
-                }
-            throw response;
-            })
-            .catch((error) => {
-                console.error("Error fetching data: ", error);
-                setError(error);
-            })
-            .finally(() => {
-                setLoading(false);
-            });
-        }, []);
-
-    if (loading) return "Loading...";
-    if (error) return "Error!";
-        // this.setState({name:data.name})
-        // this.setState({location:data.location.name})
-        // this.setState({status:data.status})
-        //image state changer
-
     return (
         
         <div className="card">
-            <img src="https://rickandmortyapi.com/api/character/avatar/3.jpeg" className="card-img-top" alt="Random" />
+            <img src={`https://rickandmortyapi.com/api/character/avatar/${selectedChar}.jpeg`} className="card-img-top" alt="Random" />
             <div className="card-body">
                 <h5 className="card-title">Are they dead?</h5>
                 <div className="card-text">
-                <pre>{JSON.stringify(data, null, 0)}</pre>
-
-                    {/* <p>{this.state.name}</p>
-                    <p>{this.state.location}</p>
-                    <p>{this.state.status}</p> */}
+                    <p>{list[selectedChar-1].name}</p>
+                    <p>{list[selectedChar-1].location.name}</p>
+                    <p>{list[selectedChar-1].status}</p>
                 </div>
-                    <button className="btn btn-warning">Random Character</button>
-
+                    <button onClick={()=>randomId()} className="btn btn-warning">Random Character</button>
+                    {console.log(selectedChar)}
             </div>
         </div>
     )

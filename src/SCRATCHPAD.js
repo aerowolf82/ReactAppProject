@@ -45,17 +45,17 @@ function MyComponent() {
     // Note: the empty deps array [] means
     // this useEffect will run once
     // similar to componentDidMount()
-    
-          // Note: it's important to handle errors here
-          // instead of a catch() block so that we don't swallow
-          // exceptions frouseEffect(() => {
+    useEffect(() => {
       fetch("https://api.example.com/items")
         .then(res => res.json())
         .then(
           (result) => {
             setIsLoaded(true);
             setItems(result);
-          },m actual bugs in components.
+          },
+          // Note: it's important to handle errors here
+          // instead of a catch() block so that we don't swallow
+          // exceptions from actual bugs in components.
           (error) => {
             setIsLoaded(true);
             setError(error);
