@@ -27,6 +27,7 @@ class App extends React.Component {
     const url = `https://rickandmortyapi.com/api/character`;
     const response = await fetch(url);
     const data = await response.json();
+    this.setState({ fullData: data });
     this.setState({ characterData: data.results });
     this.setState({ gotData: true });
   }
@@ -74,7 +75,8 @@ class App extends React.Component {
     
     return (
       <div>
-        {this.state.gotData ? this.content() : null}        
+        {this.state.gotData ? this.content() : null} 
+        {console.log(this.state.fullData)}       
       </div>
 
     );

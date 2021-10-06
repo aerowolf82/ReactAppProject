@@ -1,10 +1,5 @@
 import React, { useState, useEffect } from "react"
-//import useFetch from "react-fetch-hook";
 
-
-
-//import Random from "./Random.js"
-// import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import './Random.css';
 
 
@@ -14,23 +9,12 @@ const randomId = () =>{
     return rand;
 }
 
-// const handleClick(){
-//     return CharacterRandom(selecte)
-// }
 
-//no matter what we killed it lol 
-//Yes, yes we did.
-
-export default function CharacterRandom({charSelectorFunc, selectedChar,list, id}){
-    const [data, setData] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+export default function CharacterRandom({charSelectorFunc, selectedChar,list, refresh}){
     selectedChar = randomId();
     console.log(selectedChar)
-
-    
-    return (
         
+    return (
         <div className="card">
             <img src={`https://rickandmortyapi.com/api/character/avatar/${selectedChar}.jpeg`} className="card-img-top" alt="Random" />
             <div className="card-body">
@@ -40,8 +24,9 @@ export default function CharacterRandom({charSelectorFunc, selectedChar,list, id
                     <p>{list[selectedChar-1].location.name}</p>
                     <p>{list[selectedChar-1].status}</p>
                 </div>
-                    <button onClick={()=>randomId()} className="btn btn-warning">Random Character</button>
-                    {console.log(selectedChar)}
+                <form action="127.0.0.1:3000" method="GET">
+                    <button className="btn btn-warning">Random Character</button>
+                </form>  
             </div>
         </div>
     )
